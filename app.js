@@ -692,8 +692,19 @@ const checkoutBtn = document.getElementById("checkoutBtn");
 const backCheckout = document.getElementById("backCheckout");
 
 const placeOrderBtn = document.getElementById("placeOrderBtn");
+// Open Checkout
 
+checkoutBtn.onclick = function () {
 
+    if (cart.length === 0) {
+        alert("Your Cart is Empty");
+        return;
+    }
+
+    cartPage.classList.remove("show");
+    checkoutPage.classList.add("show");
+
+};
 
 
 
@@ -711,6 +722,10 @@ backCheckout.onclick=function(){
 // Place Order
 
 placeOrderBtn.onclick=function(){
+    if (cart.length === 0) {
+    alert("Your Cart is Empty");
+    return;
+}
 
     const name=document.getElementById("customerName").value.trim();
 
@@ -802,13 +817,11 @@ placeOrderBtn.onclick=function(){
     message+="Thank You ❤️";
 
 
-    window.open(
+    const whatsappURL =
+    "https://wa.me/919279805601?text=" +
+    encodeURIComponent(message);
 
-        "https://wa.me/919279805601?text="+message,
-
-        "_blank"
-
-    );
+    window.location.href = whatsappURL;
 
     clearCart();
 
