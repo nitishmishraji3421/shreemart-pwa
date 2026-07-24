@@ -766,57 +766,58 @@ placeOrderBtn.onclick=function(){
 
 
 
-    let message="🛒 *SHREE MART ORDER*%0A%0A";
+let message = `
+🛒 *SHREE MART*
 
-    message+="👤 Name : "+name+"%0A";
+━━━━━━━━━━━━━━━━━━
+📦 *ORDER DETAILS*
+━━━━━━━━━━━━━━━━━━
 
-    message+="📞 Mobile : "+phone+"%0A";
+🆔 Order ID : SM${Date.now()}
 
-    message+="📍 Address : "+address+"%0A";
+👤 Customer : ${name}
+📞 Mobile   : ${phone}
+📍 Address  : ${address}
+${note ? "📝 Note     : " + note : ""}
 
-    if(note!=""){
+━━━━━━━━━━━━━━━━━━
+🛍 *ITEMS*
+━━━━━━━━━━━━━━━━━━
+`;
 
-        message+="📝 Note : "+note+"%0A";
+let total = 0;
 
-    }
+cart.forEach((item, index) => {
 
-    message+="%0A";
+    const amount = item.price * item.qty;
 
-    message+="------------------------%0A";
+    message += `${index + 1}. ${item.name}
+   Qty : ${item.qty}
+   Rate: ₹${item.price}
+   Amt : ₹${amount}
 
-    message+="🛍 ITEMS%0A";
+`;
 
-    message+="------------------------%0A";
+    total += amount;
 
+});
 
-    let total=0;
+message += `
+━━━━━━━━━━━━━━━━━━
+💰 *BILL SUMMARY*
+━━━━━━━━━━━━━━━━━━
 
+Subtotal  : ₹${total}
+Delivery  : ₹30
+━━━━━━━━━━━━━━━━━━
+*TOTAL : ₹${total + 30}*
 
-    cart.forEach(item=>{
+💵 Payment : Cash On Delivery
 
-        message+=item.name+" x "+item.qty;
-
-        message+=" = ₹"+(item.price*item.qty);
-
-        message+="%0A";
-
-        total+=item.price*item.qty;
-
-    });
-
-
-    message+="%0A";
-
-    message+="Subtotal : ₹"+total+"%0A";
-
-    message+="Delivery : ₹30%0A";
-
-    message+="Total : ₹"+(total+30)+"%0A";
-
-    message+="%0A";
-
-    message+="Thank You ❤️";
-
+🙏 Thank You for Shopping
+🏪 SHREE MART
+📞 9279805601
+`;
 
     const whatsappURL =
     "https://wa.me/919279805601?text=" +
