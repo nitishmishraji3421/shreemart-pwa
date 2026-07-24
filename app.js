@@ -132,7 +132,7 @@ renderProducts(products);
 
 searchBox.addEventListener("keyup",function(){
 
-const keyword=this.value.toLowerCase();
+keyword=this.value.toLowerCase();
 
 const filtered=products.filter(product=>{
 
@@ -693,7 +693,8 @@ const backCheckout = document.getElementById("backCheckout");
 
 const placeOrderBtn = document.getElementById("placeOrderBtn");
 // Open Checkout
-
+const successPage = document.getElementById("successPage");
+const backHomeBtn = document.getElementById("backHomeBtn");
 checkoutBtn.onclick = function () {
 
     if (cart.length === 0) {
@@ -820,26 +821,11 @@ placeOrderBtn.onclick=function(){
     const whatsappURL =
     "https://wa.me/919279805601?text=" +
     encodeURIComponent(message);
+window.location.href = whatsappURL;
 
-    window.location.href = whatsappURL;
+checkoutPage.classList.remove("show");
 
-    clearCart();
-
-    renderCart();
-
-    document.getElementById("customerName").value = "";
-
-    document.getElementById("customerPhone").value = "";
-
-    document.getElementById("customerAddress").value = "";
-
-    document.getElementById("customerNote").value = "";
-
-    checkoutPage.classList.remove("show");
-
-    alert("Order Sent Successfully");
-
-
+successPage.classList.add("show");
 };
 // ===========================
 // NAVIGATION BUTTONS
@@ -866,4 +852,27 @@ navButtons[1].onclick = () => {
 navButtons[2].onclick = () => {
     renderCart();
     cartPage.classList.add("show");
+};
+
+// ===========================
+// SUCCESS PAGE
+// ===========================
+
+backHomeBtn.onclick = function () {
+
+    clearCart();
+    renderCart();
+
+    successPage.classList.remove("show");
+
+    document.getElementById("customerName").value = "";
+    document.getElementById("customerPhone").value = "";
+    document.getElementById("customerAddress").value = "";
+    document.getElementById("customerNote").value = "";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 };
