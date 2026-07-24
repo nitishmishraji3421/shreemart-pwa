@@ -1,0 +1,3324 @@
+/*====================================================
+SHREE MART CSS V3
+PART 1A
+Foundation + Header + Search + Product Layout
+====================================================*/
+
+/*==============================
+RESET
+==============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:#f1e6e6;
+    overflow-x:hidden;
+    padding-bottom:95px;
+
+}
+
+/*==============================
+VARIABLES
+==============================*/
+:root{
+
+    --green:#16a34a;
+    --green-dark:#12863d;
+
+    --yellow:#FFC107;
+
+    --white:#ffffff;
+
+    --bg:#EAF6FF;      /* Light Sky Blue */
+
+    --text:#ffffff;
+
+    --gray:#777;
+
+    --border:#dbefff;
+
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+}
+/*==============================
+COMMON
+==============================*/
+
+img{
+
+    display:block;
+    width:100%;
+
+}
+
+button{
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+
+}
+
+input,
+textarea{
+
+    outline:none;
+    border:none;
+    font-family:inherit;
+
+}
+
+section{
+
+    padding:0 16px;
+    margin-top:22px;
+
+}
+
+.title,
+section h3{
+
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:18px;
+
+}
+
+/*==============================
+TOP BAR
+==============================*/
+
+.topbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:#F7FCFF;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px;
+
+    box-shadow:
+    0 2px 18px rgba(0,0,0,.06);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.circle{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #cf0808,
+    #ff00c8);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:22px;
+
+}
+
+.logo h2{
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+.logo p{
+
+    font-size:12px;
+
+    color:#ffffff;
+
+}
+
+/*==============================
+SEARCH
+==============================*/
+
+.search{
+
+    margin:16px;
+
+    background:#ffffff;
+border:2px solid #ffffff;
+
+    height:58px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.search i{
+
+    font-size:19px;
+
+    color:#ffffff;
+
+    margin-right:14px;
+
+}
+
+.search input{
+
+    flex:1;
+
+    background:none;
+
+    font-size:16px;
+
+}
+
+/*==============================
+CATEGORY
+==============================*/
+
+.category{
+
+    margin-top:8px;
+
+}
+
+.category-list{
+
+    display:flex;
+
+    gap:14px;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+
+    scrollbar-width:none;
+
+}
+
+.category-list::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.cat{
+
+    min-width:88px;
+
+    height:100px;
+
+    background:#ff9e43;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 8px 20px rgba(231, 143, 143, 0.06);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.cat:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.cat span{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/*==============================
+PRODUCT GRID
+==============================*/
+
+.products{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+    gap:14px;
+
+    align-items:start;
+
+    margin-bottom:25px;
+
+}
+
+/*==============================
+PRODUCT CARD
+==============================*/
+
+.product{
+
+    background:#ff9393;
+border:1px solid #DCEEFF;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.25s;
+
+}
+
+.product:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/*==============================
+IMAGE
+==============================*/
+
+.product-image{
+
+    height:165px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+    background:#ffffff;
+
+}
+
+.product-image > img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+/*==============================
+BADGES
+==============================*/
+
+.offer{
+
+    position:absolute;
+
+    top:10px;
+
+    left:10px;
+
+    background:#f1c84c;
+color:#c25757;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    z-index:2;
+
+}
+
+.favourite{
+
+    position:absolute;
+
+    right:10px;
+
+    top:10px;
+
+    width:36px;
+
+    height:36px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 1B
+PRODUCT INFO + ADD BUTTON FIX
+====================================================*/
+
+/*==============================
+PRODUCT INFO
+==============================*/
+
+.product-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    padding:14px;
+
+    gap:8px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.product-name{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    line-height:1.4;
+
+    min-height:42px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+.product-unit{
+
+    font-size:13px;
+
+    color:#888;
+
+    font-weight:500;
+
+}
+
+/*==============================
+PRICE AREA
+==============================*/
+
+.price-row{
+
+    margin-top:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-height:56px;
+
+}
+
+.price{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.price strong{
+
+    font-size:18px;
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
+
+.old-price{
+
+    font-size:12px;
+
+    color:#ffffff;
+
+    text-decoration:line-through;
+
+}
+
+/*==============================
+ADD BUTTON
+==============================*/
+
+.add-btn{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:16px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+    position:relative;
+
+    z-index:100;
+
+    touch-action:manipulation;
+
+    user-select:none;
+
+    transition:.2s;
+
+}
+
+.add-btn:hover{
+
+    background:#12863d;
+
+    transform:scale(1.05);
+
+}
+
+.add-btn:active{
+
+    transform:scale(.94);
+
+}
+
+/*==============================
+QUANTITY BUTTONS
+==============================*/
+
+.qty-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    width:120px;
+
+    height:44px;
+
+    background:#16a34a;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.qty-btn{
+
+    width:38px;
+
+    height:44px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+.qty-value{
+
+    color:#fff;
+
+    font-weight:700;
+
+    font-size:16px;
+
+}
+
+/*==============================
+IMAGE FIX
+==============================*/
+
+.product-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    transition:.25s;
+
+}
+
+.product:hover .product-image img{
+
+    transform:scale(1.06);
+
+}
+
+/*==============================
+CLICK FIX
+==============================*/
+
+.product *{
+
+    pointer-events:auto;
+
+}
+
+.offer{
+
+    pointer-events:none;
+
+}
+
+.favourite{
+
+    pointer-events:none;
+
+}
+
+.product::before{
+
+    display:none;
+
+}
+
+.product::after{
+
+    display:none;
+
+}
+
+/*==============================
+MOBILE FIX
+==============================*/
+
+@media(max-width:480px){
+
+.products{
+
+    gap:12px;
+
+}
+
+.product{
+
+    border-radius:18px;
+
+}
+
+.product-image{
+
+    height:145px;
+
+    padding:14px;
+
+}
+
+.product-info{
+
+    padding:12px;
+
+}
+
+.product-name{
+
+    font-size:14px;
+
+    min-height:40px;
+
+}
+
+.price strong{
+
+    font-size:17px;
+
+}
+
+.add-btn{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:22px;
+
+}
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 2A
+BANNER + FLOATING CART + BOTTOM NAV
+====================================================*/
+
+/*==============================
+BANNER
+==============================*/
+
+.banner{
+
+    margin:16px;
+
+    height:190px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    linear-gradient(135deg,#FFC107,#FFD54F);
+
+    box-shadow:
+    0 15px 35px rgba(22,163,74,.25);
+
+}
+
+.banner::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-40px;
+
+    top:-40px;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.banner::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-30px;
+
+    bottom:-50px;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.overlay{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:24px;
+
+}
+
+.overlay h1{
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    line-height:1.15;
+
+}
+
+.overlay p{
+
+    color:#ecffef;
+
+    margin-top:8px;
+
+    font-size:15px;
+
+}
+
+.overlay button{
+
+    margin-top:22px;
+
+    width:145px;
+
+    height:48px;
+
+    border-radius:14px;
+    
+    background:#fff;
+    
+    color:#e09d00;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.overlay button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.overlay button:active{
+
+    transform:scale(.96);
+
+}
+
+/*==============================
+FLOATING CART
+==============================*/
+
+.floating-cart{
+
+    position:fixed;
+
+    right:18px;
+
+    bottom:88px;
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:50%;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 15px 35px rgba(22,163,74,.35);
+
+    z-index:9999;
+
+    transition:.25s;
+
+}
+
+.floating-cart:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.floating-cart:active{
+
+    transform:scale(.94);
+
+}
+
+#cartCount{
+
+    position:absolute;
+
+    top:-6px;
+
+    right:-6px;
+
+    width:26px;
+
+    height:26px;
+
+    border-radius:50%;
+
+    background:#ff3b30;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    border:2px solid #fff;
+
+}
+
+/*==============================
+BOTTOM NAVIGATION
+==============================*/
+
+nav{
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:72px;
+
+    background:#F8FCFF;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    box-shadow:
+    0 -6px 24px rgba(0,0,0,.08);
+
+    z-index:9998;
+
+}
+
+nav div{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:4px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    color:#777;
+
+}
+
+nav div i{
+
+    font-size:20px;
+
+}
+
+nav div span{
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+nav .active{
+
+    color:#FFC107;
+
+}
+
+/*==============================
+COMMON BUTTON FIX
+==============================*/
+
+button{
+
+    touch-action:manipulation;
+
+}
+
+.add-btn,
+.qty-btn,
+.checkoutBtn,
+.overlay button{
+
+    -webkit-user-select:none;
+    user-select:none;
+
+}
+
+/*==============================
+MOBILE
+==============================*/
+
+@media(max-width:480px){
+
+.banner{
+
+    height:170px;
+
+    margin:14px;
+
+}
+
+.overlay{
+
+    padding:18px;
+
+}
+
+.overlay h1{
+
+    font-size:24px;
+
+}
+
+.overlay p{
+
+    font-size:13px;
+
+}
+
+.overlay button{
+
+    width:130px;
+
+    height:44px;
+
+    font-size:14px;
+
+}
+
+.floating-cart{
+
+    width:58px;
+
+    height:58px;
+
+    right:16px;
+
+}
+
+nav{
+
+    height:68px;
+
+}
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 2B
+CART PAGE + BILL BOX + CHECKOUT
+====================================================*/
+
+/*==============================
+CART PAGE
+==============================*/
+
+.cart-page{
+
+position:fixed;
+
+top:0;
+right:-100%;
+
+width:100%;
+max-width:470px;
+
+height:100vh;
+
+background:var(--bg);
+
+z-index:99999;
+
+display:flex;
+
+flex-direction:column;
+
+transition:.35s ease;
+
+box-shadow:-12px 0 30px rgba(0,0,0,.15);
+
+}
+
+.cart-page.show{
+
+right:0;
+
+}
+
+/*==============================
+HEADER
+==============================*/
+
+.cart-header{
+
+height:72px;
+
+background:#e97c4a;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 22px;
+
+color:#ffffff;
+
+flex-shrink:0;
+
+}
+
+.cart-header h2{
+
+font-size:24px;
+
+font-weight:700;
+
+}
+
+#closeCart{
+
+font-size:30px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+#closeCart:hover{
+
+transform:rotate(90deg);
+
+}
+
+/*==============================
+CART ITEMS
+==============================*/
+
+#cartItems{
+
+flex:1;
+
+overflow-y:auto;
+
+padding:18px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+/*==============================
+CART ITEM
+==============================*/
+
+.cart-item{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:14px;
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+box-shadow:0 8px 22px rgba(0,0,0,.06);
+
+}
+
+.cart-item img{
+
+width:80px;
+
+height:80px;
+
+border-radius:16px;
+
+object-fit:contain;
+
+background:#fafafa;
+
+flex-shrink:0;
+
+}
+
+.cart-info{
+
+flex:1;
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+.cart-name{
+
+font-size:16px;
+
+font-weight:700;
+
+line-height:1.4;
+
+color:#ffffff;
+
+}
+
+.cart-price{
+
+font-size:18px;
+
+font-weight:700;
+
+color:#16a34a;
+
+}
+
+/*==============================
+QTY BOX
+==============================*/
+
+.qty-box{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:4px;
+
+}
+
+.qty-btn{
+
+width:36px;
+
+height:36px;
+
+border:none;
+
+border-radius:10px;
+
+background:#16a34a;
+
+color:#f3f3f3;
+
+font-size:20px;
+
+font-weight:700;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.qty-btn:hover{
+
+background:#12863d;
+
+}
+
+.qty-btn:active{
+
+transform:scale(.94);
+
+}
+
+.qty-box span{
+
+min-width:26px;
+
+text-align:center;
+
+font-size:17px;
+
+font-weight:700;
+
+}
+
+/*==============================
+REMOVE BUTTON
+==============================*/
+
+.removeBtn{
+
+padding:10px 16px;
+
+border:none;
+
+border-radius:12px;
+
+background:#ff3b30;
+
+color:#fff;
+
+font-size:13px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.removeBtn:hover{
+
+background:#d92b22;
+
+}
+
+/*==============================
+EMPTY CART
+==============================*/
+
+.empty-cart{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+padding:60px 20px;
+
+text-align:center;
+
+}
+
+.empty-cart img{
+
+width:180px;
+
+margin-bottom:20px;
+
+}
+
+.empty-cart h2{
+
+font-size:24px;
+
+color:#ffffff;
+
+margin-bottom:8px;
+
+}
+
+.empty-cart p{
+
+color:#ffffff;
+
+font-size:14px;
+
+}
+
+/*==============================
+BILL BOX
+==============================*/
+
+.bill-box{
+
+background:#fff;
+
+padding:20px;
+
+border-top-left-radius:26px;
+
+border-top-right-radius:26px;
+
+box-shadow:0 -10px 30px rgba(0,0,0,.08);
+
+flex-shrink:0;
+
+}
+
+.bill-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:9px 0;
+
+font-size:16px;
+
+color:#ffffff;
+
+}
+
+.bill-row.total{
+
+margin-top:10px;
+
+padding-top:14px;
+
+border-top:2px dashed #ddd;
+
+font-size:22px;
+
+font-weight:700;
+
+color:#ffffff;
+
+}
+
+/*==============================
+CHECKOUT BUTTON
+==============================*/
+
+.checkoutBtn{
+
+width:100%;
+
+height:58px;
+
+margin-top:20px;
+
+border:none;
+
+border-radius:18px;
+
+background:#16a34a;
+
+color:#fff;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.checkoutBtn:hover{
+
+background:#861259;
+
+}
+
+.checkoutBtn:active{
+
+transform:scale(.98);
+
+}
+
+/*==============================
+SCROLLBAR
+==============================*/
+
+#cartItems::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+#cartItems::-webkit-scrollbar-thumb{
+
+background:#d45a5a;
+
+border-radius:20px;
+
+}
+
+/*==============================
+RESPONSIVE
+==============================*/
+
+@media(max-width:480px){
+
+.cart-item{
+
+padding:12px;
+
+gap:12px;
+
+}
+
+.cart-item img{
+
+width:70px;
+
+height:70px;
+
+}
+
+.cart-name{
+
+font-size:15px;
+
+}
+
+.cart-price{
+
+font-size:17px;
+
+}
+
+.removeBtn{
+
+padding:8px 12px;
+
+font-size:12px;
+
+}
+
+.bill-box{
+
+padding:18px;
+
+}
+
+.bill-row.total{
+
+font-size:20px;
+
+}
+
+.checkoutBtn{
+
+height:54px;
+
+font-size:17px;
+
+}
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 2C
+CHECKOUT + PAYMENT + PROFILE MODAL
+====================================================*/
+
+/*==============================
+CHECKOUT PAGE
+==============================*/
+
+.checkout-page{
+
+position:fixed;
+
+top:0;
+right:-100%;
+
+width:100%;
+max-width:480px;
+
+height:100vh;
+
+background:var(--bg);
+
+z-index:999999;
+
+display:flex;
+
+flex-direction:column;
+
+transition:.35s;
+
+}
+
+.checkout-page.show{
+
+right:0;
+
+}
+
+/*==============================
+CHECKOUT HEADER
+==============================*/
+
+.checkout-header{
+
+height:72px;
+
+background:#68133d;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 20px;
+
+flex-shrink:0;
+
+}
+
+.checkout-header h2{
+
+font-size:23px;
+
+font-weight:700;
+
+}
+
+#closeCheckout{
+
+font-size:30px;
+
+cursor:pointer;
+
+}
+
+/*==============================
+CHECKOUT BODY
+==============================*/
+
+.checkout-body{
+
+flex:1;
+
+overflow:auto;
+
+padding:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+/*==============================
+INPUT GROUP
+==============================*/
+
+.input-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+.input-group label{
+
+font-size:14px;
+
+font-weight:600;
+
+color:#ffffff;
+
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+
+width:100%;
+
+padding:15px;
+
+font-size:15px;
+
+background:#fff;
+
+border:2px solid #e9e9e9;
+
+border-radius:16px;
+
+transition:.25s;
+
+font-family:inherit;
+
+}
+
+.input-group textarea{
+
+height:110px;
+
+resize:none;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+
+border-color:#16a34a;
+
+}
+
+/*==============================
+PAYMENT BOX
+==============================*/
+
+.payment-box{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:18px;
+
+box-shadow:0 8px 22px rgba(0,0,0,.06);
+
+}
+
+.payment-box h3{
+
+margin-bottom:15px;
+
+font-size:18px;
+
+}
+
+.payment-option{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 0;
+
+cursor:pointer;
+
+}
+
+.payment-option input{
+
+transform:scale(1.15);
+
+}
+
+/*==============================
+ORDER SUMMARY
+==============================*/
+
+.summary-box{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:18px;
+
+box-shadow:0 8px 22px rgba(0,0,0,.06);
+
+}
+
+.summary-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:8px 0;
+
+font-size:15px;
+
+}
+
+.summary-total{
+
+margin-top:12px;
+
+padding-top:12px;
+
+border-top:2px dashed #ddd;
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:21px;
+
+font-weight:700;
+
+}
+
+/*==============================
+PLACE ORDER
+==============================*/
+
+.place-order{
+
+margin-top:20px;
+
+width:100%;
+
+height:58px;
+
+background:#a31635;
+
+color:#fff;
+
+border:none;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.place-order:hover{
+
+background:#12863d;
+
+}
+
+.place-order:active{
+
+transform:scale(.98);
+
+
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 3A
+ANIMATIONS + TOAST + LOADER + DESKTOP RESPONSIVE
+====================================================*/
+
+/*==============================
+GLOBAL ANIMATION
+==============================*/
+
+.fade-in{
+
+animation:fadeIn .35s ease;
+
+}
+
+@keyframes fadeIn{
+
+0%{
+
+opacity:0;
+
+transform:translateY(12px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.scale-in{
+
+animation:scaleIn .25s ease;
+
+}
+
+@keyframes scaleIn{
+
+0%{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/*==============================
+BUTTON EFFECTS
+==============================*/
+
+button{
+
+transition:
+background .25s,
+transform .2s,
+box-shadow .25s;
+
+}
+
+button:hover{
+
+box-shadow:
+0 8px 22px rgba(0,0,0,.15);
+
+}
+
+button:active{
+
+transform:scale(.96);
+
+}
+
+/*==============================
+PRODUCT EFFECT
+==============================*/
+
+.product{
+
+transition:
+transform .25s,
+box-shadow .25s;
+
+}
+
+.product:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.product img{
+
+transition:.35s;
+
+}
+
+.product:hover img{
+
+transform:scale(1.08);
+
+}
+
+/*==============================
+CATEGORY EFFECT
+==============================*/
+
+.cat{
+
+transition:.25s;
+
+}
+
+.cat:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 12px 24px rgba(0,0,0,.12);
+
+}
+
+.cat.active{
+
+background:#FFC107;
+
+color:#222;
+
+}
+
+.cat.active span{
+
+color:#fff;
+
+}
+
+/*==============================
+TOAST
+==============================*/
+
+.toast{
+
+position:fixed;
+
+left:50%;
+
+bottom:90px;
+
+transform:translateX(-50%);
+
+background:#222;
+
+color:#fff;
+
+padding:14px 20px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.3s;
+
+z-index:999999;
+
+}
+
+.toast.show{
+
+opacity:1;
+
+bottom:105px;
+
+}
+
+/*==============================
+LOADER
+==============================*/
+
+.loader{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+border:4px solid #ddd;
+
+border-top:4px solid #16a34a;
+
+animation:spin .8s linear infinite;
+
+margin:auto;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/*==============================
+SKELETON LOADER
+==============================*/
+
+.skeleton{
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#f2f2f2 25%,
+
+#e5e5e5 50%,
+
+#f2f2f2 75%
+
+);
+
+background-size:300%;
+
+animation:skeleton 1.2s infinite;
+
+border-radius:14px;
+
+}
+
+@keyframes skeleton{
+
+0%{
+
+background-position:100% 0;
+
+}
+
+100%{
+
+background-position:-100% 0;
+
+}
+
+}
+
+/*==============================
+CUSTOM SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+width:7px;
+
+height:7px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff7272;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#16a34a;
+
+}
+
+/*==============================
+SELECTION
+==============================*/
+
+::selection{
+
+background:#16a34a;
+
+color:#fff;
+
+}
+
+/*==============================
+TABLET
+==============================*/
+
+@media(min-width:768px){
+
+.products{
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:22px;
+
+}
+
+.banner{
+
+height:240px;
+
+}
+
+.overlay h1{
+
+font-size:38px;
+
+}
+
+}
+
+/*==============================
+LAPTOP
+==============================*/
+
+@media(min-width:1024px){
+
+body{
+
+max-width:1500px;
+
+margin:auto;
+
+}
+
+.products{
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:24px;
+
+}
+
+section{
+
+padding:0 28px;
+
+}
+
+.topbar{
+
+padding:18px 28px;
+
+}
+
+.search{
+
+margin:20px 28px;
+
+}
+
+.banner{
+
+margin:20px 28px;
+
+height:260px;
+
+}
+
+nav{
+
+max-width:600px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+border-radius:25px 25px 0 0;
+
+}
+
+}
+
+/*==============================
+LARGE SCREEN
+==============================*/
+
+@media(min-width:1440px){
+
+.products{
+
+grid-template-columns:
+repeat(5,1fr);
+
+}
+
+.banner{
+
+height:280px;
+
+}
+
+}
+
+/*==============================
+PERFORMANCE
+==============================*/
+
+.product,
+.banner,
+.cat,
+button{
+
+will-change:transform;
+
+}
+
+img{
+
+image-rendering:auto;
+
+}
+
+*{
+
+-webkit-font-smoothing:antialiased;
+
+-moz-osx-font-smoothing:grayscale;
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 3B
+SEARCH + EMPTY STATE + MY ORDERS + STATUS + PRINT
+====================================================*/
+
+/*==============================
+SEARCH DROPDOWN
+==============================*/
+
+.search-wrapper{
+
+position:relative;
+
+}
+
+.search-result{
+
+position:absolute;
+
+left:0;
+right:0;
+top:100%;
+
+margin-top:8px;
+
+background:#fff;
+
+border-radius:18px;
+
+box-shadow:0 12px 35px rgba(0,0,0,.12);
+
+max-height:320px;
+
+overflow-y:auto;
+
+z-index:99999;
+
+display:none;
+
+}
+
+.search-result.show{
+
+display:block;
+
+animation:fadeIn .25s;
+
+}
+
+.search-item{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:14px 16px;
+
+cursor:pointer;
+
+transition:.2s;
+
+border-bottom:1px solid #f2f2f2;
+
+}
+
+.search-item:last-child{
+
+border-bottom:none;
+
+}
+
+.search-item:hover{
+
+background:#f7f7f7;
+
+}
+
+.search-item img{
+
+width:55px;
+
+height:55px;
+
+object-fit:contain;
+
+border-radius:10px;
+
+background:#fafafa;
+
+}
+
+.search-item h4{
+
+font-size:15px;
+
+font-weight:600;
+
+color:#222;
+
+}
+
+.search-item p{
+
+font-size:13px;
+
+color:#c5134e;
+
+margin-top:3px;
+
+font-weight:700;
+
+}
+
+/*==============================
+NO PRODUCT FOUND
+==============================*/
+
+.no-product{
+
+padding:60px 20px;
+
+text-align:center;
+
+}
+
+.no-product img{
+
+width:180px;
+
+margin:auto;
+
+margin-bottom:18px;
+
+}
+
+.no-product h2{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+color:#333;
+
+}
+
+.no-product p{
+
+color:#888;
+
+font-size:15px;
+
+}
+
+/*==============================
+ORDER PAGE
+==============================*/
+
+.orders-page{
+
+position:fixed;
+
+top:0;
+right:-100%;
+
+width:100%;
+max-width:480px;
+
+height:100vh;
+
+background:var(--bg);
+
+display:flex;
+
+flex-direction:column;
+
+transition:.35s;
+
+z-index:999999;
+
+}
+
+.orders-page.show{
+
+right:0;
+
+}
+
+.orders-header{
+
+height:72px;
+
+background:#16a34a;
+
+color:#fff;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 20px;
+
+}
+
+.orders-header h2{
+
+font-size:23px;
+
+font-weight:700;
+
+}
+
+#closeOrders{
+
+font-size:30px;
+
+cursor:pointer;
+
+}
+
+.orders-list{
+
+flex:1;
+
+overflow:auto;
+
+padding:18px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+/*==============================
+ORDER CARD
+==============================*/
+
+.order-card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:18px;
+
+box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.order-id{
+
+font-size:17px;
+
+font-weight:700;
+
+}
+
+.order-date{
+
+font-size:13px;
+
+color:#ffffff;
+
+}
+
+.order-items{
+
+font-size:14px;
+
+color:#ffffff;
+
+line-height:1.6;
+
+}
+
+.order-total{
+
+font-size:20px;
+
+font-weight:700;
+
+color:#ffffff;
+
+}
+
+/*==============================
+STATUS
+==============================*/
+
+.status{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:700;
+
+width:max-content;
+
+}
+
+.pending{
+
+background:#fff3cd;
+
+color:#9a6700;
+
+}
+
+.confirmed{
+
+background:#d1fae5;
+
+color:#047857;
+
+}
+
+.shipped{
+
+background:#dbeafe;
+
+color:#1d4ed8;
+
+}
+
+.delivered{
+
+background:#dcfce7;
+
+color:#15803d;
+
+}
+
+.cancelled{
+
+background:#fee2e2;
+
+color:#b91c1c;
+
+}
+
+/*==============================
+DISCOUNT TAG
+==============================*/
+
+.discount-tag{
+
+display:inline-flex;
+
+padding:5px 10px;
+
+border-radius:20px;
+
+background:#ff3b30;
+
+color:#fff;
+
+font-size:12px;
+
+font-weight:700;
+
+}
+
+/*==============================
+NEW TAG
+==============================*/
+
+.new-tag{
+
+display:inline-flex;
+
+padding:5px 10px;
+
+border-radius:20px;
+
+background:#16a34a;
+
+color:#fff;
+
+font-size:12px;
+
+font-weight:700;
+
+}
+
+/*==============================
+OUT OF STOCK
+==============================*/
+
+.out-stock{
+
+opacity:.55;
+
+filter:grayscale(100%);
+
+pointer-events:none;
+
+}
+
+.stock-label{
+
+margin-top:8px;
+
+font-size:13px;
+
+font-weight:700;
+
+color:#ff3b30;
+
+}
+
+/*==============================
+SUCCESS ICON
+==============================*/
+
+.success-icon{
+
+width:85px;
+
+height:85px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#16a34a;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:40px;
+
+color:#fff;
+
+}
+
+/*==============================
+PRINT
+==============================*/
+
+@media print{
+
+nav,
+.banner,
+.search,
+.floating-cart,
+.add-btn,
+.checkoutBtn{
+
+display:none !important;
+
+}
+
+body{
+
+background:#fff;
+
+padding:0;
+
+}
+
+.product{
+
+box-shadow:none;
+
+border:1px solid #ddd;
+
+}
+
+}
+
+/*==============================
+MOBILE
+==============================*/
+
+@media(max-width:480px){
+
+.order-card{
+
+padding:16px;
+
+}
+
+.order-total{
+
+font-size:18px;
+
+}
+
+.orders-header{
+
+height:66px;
+
+}
+
+.search-item{
+
+padding:12px;
+
+}
+
+.search-item img{
+
+width:48px;
+
+height:48px;
+
+}
+
+}
+/*====================================================
+SHREE MART CSS V3
+PART 4A
+FINAL POLISH + DARK MODE + ACCESSIBILITY
+====================================================*/
+
+/*==============================
+SAFE AREA (NOTCH PHONES)
+==============================*/
+
+body{
+
+padding-left:env(safe-area-inset-left);
+
+padding-right:env(safe-area-inset-right);
+
+padding-bottom:
+calc(90px + env(safe-area-inset-bottom));
+
+}
+
+/*==============================
+FOCUS ACCESSIBILITY
+==============================*/
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible{
+
+outline:3px solid #16a34a;
+
+outline-offset:3px;
+
+border-radius:10px;
+
+}
+
+/*==============================
+DISABLE IMAGE DRAG
+==============================*/
+
+img{
+
+user-select:none;
+
+pointer-events:none;
+
+}
+
+/*==============================
+SMOOTH TRANSITIONS
+==============================*/
+
+.product,
+.cat,
+button,
+input,
+textarea,
+nav div,
+.banner,
+.cart-item,
+.order-card{
+
+transition:
+
+background .25s ease,
+
+color .25s ease,
+
+transform .25s ease,
+
+box-shadow .25s ease,
+
+border-color .25s ease;
+
+}
+
+/*==============================
+CARD IMPROVEMENT
+==============================*/
+
+.product{
+
+border:1px solid #f0f0f0;
+
+}
+
+.product:hover{
+
+border-color:#16a34a22;
+
+}
+
+/*==============================
+ACTIVE BUTTON
+==============================*/
+
+.add-btn:active,
+.checkoutBtn:active,
+.place-order:active{
+
+transform:scale(.95);
+
+}
+
+/*==============================
+BOTTOM NAV ACTIVE
+==============================*/
+
+/*==============================
+INPUT PLACEHOLDER
+==============================*/
+
+::placeholder{
+
+color:#9a9a9a;
+
+opacity:1;
+
+}
+
+/*==============================
+DISABLED
+==============================*/
+
+button:disabled{
+
+opacity:.5;
+
+cursor:not-allowed;
+
+box-shadow:none;
+
+}
+
+/*==============================
+TABLET FIX
+==============================*/
+
+@media(min-width:600px){
+
+.products{
+
+grid-template-columns:
+repeat(3,1fr);
+
+}
+
+}
+
+/*==============================
+DESKTOP FIX
+==============================*/
+
+@media(min-width:1200px){
+
+.products{
+
+grid-template-columns:
+repeat(5,1fr);
+
+}
+
+.banner{
+
+height:300px;
+
+}
+
+}
+
+/*==============================
+4K SCREEN
+==============================*/
+
+@media(min-width:1800px){
+
+body{
+
+max-width:1800px;
+
+margin:auto;
+
+}
+
+.products{
+
+grid-template-columns:
+repeat(6,1fr);
+
+}
+
+}
+
+/*==============================
+LANDSCAPE PHONE
+==============================*/
+
+@media(max-height:500px){
+
+.banner{
+
+height:150px;
+
+}
+
+nav{
+
+height:60px;
+
+}
+
+}
+
+/*==============================
+REDUCE MOTION
+==============================*/
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+/*==============================
+DARK MODE
+==============================*/
+
+@media(prefers-color-scheme:dark){
+
+body{
+
+background:#ffe15d;
+
+color:#ffffff;
+
+}
+
+.topbar,
+.search,
+.product,
+.cart-item,
+.bill-box,
+.summary-box,
+.payment-box,
+.order-card{
+
+background:#3a0921;
+
+color:#ffffff;
+
+border-color:#da9797;
+
+}
+
+.search input,
+.input-group input,
+.input-group textarea,
+.input-group select{
+
+background:#111827;
+
+color:#fff;
+
+border-color:#4b576b;
+
+}
+
+nav{
+
+background:#f4f5f7;
+
+}
+
+}
+
+/*==============================
+FINAL OPTIMIZATION
+==============================*/
+
+*{
+
+box-sizing:border-box;
+
+}
+
+.product,
+.cart-item,
+.order-card,
+.banner{
+
+contain:layout paint;
+
+}
+
+.product img{
+
+backface-visibility:hidden;
+
+transform:translateZ(0);
+
+}
+/*==============================
+COMBO IMAGES
+==============================*/
+
+.combo-images{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+width:100%;
+
+height:100%;
+
+padding:0 4px;
+
+}
+
+.combo-img{
+
+width:42% !important;
+
+height:95px !important;
+
+object-fit:contain;
+
+flex:0 0 42%;
+
+display:block;
+
+}
+
+.plus-sign{
+
+flex:0 0 16%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#16a34a;
+
+background:#fff;
+
+border-radius:50%;
+
+width:24px;
+
+height:24px;
+
+margin:0 2px;
+
+}
+
+/*==============================
+APP VERSION
+==============================*/
+
+:root{
+
+--css-version:"SHREE MART V3.0";
+
+}

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHREE MART</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+TOP BAR
+=========================== -->
+
+<div class="topbar">
+
+    <div class="logo">
+
+        <div class="circle">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+
+        <div>
+
+            <h2>SHREE MART</h2>
+
+            <p>30 Minute Delivery</p>
+
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+<!-- ===========================
+SEARCH
+=========================== -->
+
+<div class="search">
+
+    <i class="fa-solid fa-search"></i>
+
+    <input
+        type="text"
+        placeholder="Search Grocery">
+
+</div>
+
+<!-- ===========================
+BANNER
+=========================== -->
+
+<div class="banner">
+
+    <div class="overlay">
+
+        <h1>30 Minute Delivery</h1>
+
+        <p>Fresh Grocery At Lowest Price</p>
+
+        <button>Shop Now</button>
+
+    </div>
+
+<section class="category">
+
+    <h3>Shop By Category</h3>
+
+    <div class="category-list">
+
+        <button class="cat active" data-category="ALL">
+            🏪
+            <span>All</span>
+        </button>
+
+        <button class="cat" data-category="ATTA">
+            🌾
+            <span>ATTA</span>
+        </button>
+
+        <button class="cat" data-category="Rice">
+            🍚
+            <span>Rice</span>
+        </button>
+
+        <button class="cat" data-category="Dal">
+            🫘
+            <span>Dal</span>
+        </button>
+
+        <button class="cat" data-category="Noodles & Pasta">
+            🍜
+            <span>Noodles</span>
+        </button>
+
+        <button class="cat" data-category="Milk">
+            🥛
+            <span>Milk</span>
+        </button>
+
+        <button class="cat" data-category="Dairy">
+            🧈
+            <span>Dairy</span>
+        </button>
+
+        <button class="cat" data-category="Salt & Sugar">
+            🧂
+            <span>Salt & Sugar</span>
+        </button>
+
+        <button class="cat" data-category="Sauces">
+            🍅
+            <span>Sauces</span>
+        </button>
+
+        <button class="cat" data-category="Cold Drink">
+            🥤
+            <span>Cold Drink</span>
+        </button>
+
+        <button class="cat" data-category="Masala">
+            🌶️
+            <span>Masala</span>
+        </button>
+
+        <button class="cat" data-category="Frozen Food">
+            🧊
+            <span>Frozen Food</span>
+        </button>
+
+        <button class="cat" data-category="Biscuits">
+            🍪
+            <span>Biscuits</span>
+        </button>
+
+    </div>
+
+</section>
+</div>
+
+</section>
+<!-- ===========================
+PRODUCTS
+=========================== -->
+
+<section>
+
+<h3 class="title">
+
+Popular Products
+
+</h3>
+
+<div
+id="products"
+class="products">
+
+</div>
+
+</section>
+
+<!-- ===========================
+CART PAGE
+=========================== -->
+
+<section
+id="cartPage"
+class="cart-page">
+
+<div class="cart-header">
+
+<h2>
+
+🛒 My Cart
+
+</h2>
+
+<span
+id="closeCart">
+
+✕
+
+</span>
+
+</div>
+
+<div
+id="cartItems">
+
+</div>
+
+<div class="bill-box">
+
+<div class="bill-row">
+
+<span>
+
+Items
+
+</span>
+
+<span
+id="itemCount">
+
+0
+
+</span>
+
+</div>
+
+<div class="bill-row">
+
+<span>
+
+Subtotal
+
+</span>
+
+<span
+id="subTotal">
+
+₹0
+
+</span>
+
+</div>
+
+<div class="bill-row">
+
+<span>
+
+Delivery
+
+</span>
+
+<span
+id="deliveryCharge">
+
+₹30
+
+</span>
+
+</div>
+
+<div class="bill-row total">
+
+<span>
+
+Total
+
+</span>
+
+<span
+id="grandTotal">
+
+₹30
+
+</span>
+
+</div>
+
+<button
+id="checkoutBtn"
+class="checkoutBtn">
+
+Proceed To Checkout
+
+</button>
+
+</div>
+
+</section>
+<!-- ===========================
+CHECKOUT PAGE
+=========================== -->
+
+<section id="checkoutPage" class="checkout-page">
+
+    <div class="checkout-header">
+
+        <span id="backCheckout">
+            <i class="fa-solid fa-arrow-left"></i>
+        </span>
+
+        <h2>Checkout</h2>
+
+    </div>
+
+    <div class="checkout-body">
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter Full Name">
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Mobile Number">
+
+        <textarea
+            id="customerAddress"
+            placeholder="Delivery Address"></textarea>
+
+        <textarea
+            id="customerNote"
+            placeholder="Delivery Instructions (Optional)"></textarea>
+
+        <div class="payment-box">
+
+            <h3>Payment Method</h3>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="payment"
+                    checked
+                    title="Cash On Delivery"
+                    aria-label="Cash On Delivery">
+
+                Cash On Delivery
+
+            </label>
+
+        </div>
+
+        <button
+            id="placeOrderBtn"
+            class="checkoutBtn">
+
+            Place Order
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+FLOATING CART
+=========================== -->
+
+<div class="floating-cart">
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    <span id="cartCount">
+
+        0
+
+    </span>
+
+</div>
+
+<!-- ===========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav>
+
+    <div class="active">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Home</span>
+
+    </div>
+
+    <div>
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        <span>Category</span>
+
+    </div> 
+
+    <div>
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span>Cart</span>
+
+    </div>
+
+    
+
+</nav>
+
+<!-- ===========================
+JAVASCRIPT
+=========================== -->
+
+<script src="products.js"></script>
+
+<script src="APP.js"></script>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>
